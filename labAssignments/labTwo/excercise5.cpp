@@ -13,7 +13,7 @@ using namespace std;
  
 
 int main(){
-
+    
     char input, inputInt;
     int i=0;
     vector<int> ans;  
