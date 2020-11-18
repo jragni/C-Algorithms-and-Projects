@@ -1,0 +1,22 @@
+1
+9
+36
+foo is NOT A NUMBER, so we it cannot be squared. 
+
+64
+36
+hello is NOT A NUMBER, so we it cannot be squared. 
+
+9
+1
+bar is NOT A NUMBER, so we it cannot be squared. 
+
+4
+64
+81
+bar is NOT A NUMBER, so we it cannot be squared. 
+
+bar is NOT A NUMBER, so we it cannot be squared. 
+
+81
+0
