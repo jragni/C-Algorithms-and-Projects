@@ -26,8 +26,28 @@ std::vector<Weapon> weaponsList = {Hulk_Buster,Mjolnir,Pistol,Lightsaber,Arrow,T
 
 // Avenger Class Functions
 
+
+Avenger::Avenger(std::string avengerName, int avengerAge){
+           
+    //set name 
+    setName(avengerName);
+    std::cout << name<< " has been added to the Avengers. \n";
+    
+    //set age
+    setAge(avengerAge);
+        
+}
+
 void Avenger::setName(std::string aName){
     name = aName;
+}
+
+std::string Avenger::getName(){
+    return name;
+}
+
+int Avenger::getAge(){
+    return age;
 }
 
 void Avenger::setAge(int aAge){
@@ -73,3 +93,4 @@ void Avenger::displayArsenal(){
         std::cout<< arsenal.at(i).name<<std::endl;
     }
 }
+

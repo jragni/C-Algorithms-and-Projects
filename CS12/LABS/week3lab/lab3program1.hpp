@@ -18,17 +18,20 @@ class Avenger{
         int age;
 
     public:
+
+        //default constructor
+        Avenger();
+        // overload constructor with name, age, and arsenal input
+        Avenger(std::string avengerName, int avengerAge);
+        
+        // overload operator for sorting
     
-        // constructor with name, age, and arsenal input
-        Avenger(std::string avengerName, int avengerAge,std::vector<std::string> avengerWeapon){
-            
-            //set name 
-            setName(avengerName);
-            std::cout << name<< " has been added to the Avengers. \n";
-            
-            // set arsenal
-            setArsenal(avengerWeapon);
+        bool operator < (Avenger obj) {
+            return (getAge() < obj.getAge());
         }
+
+
+        //MUTATOR 
 
         // method to set name
         void setName(std::string aName);
@@ -39,6 +42,7 @@ class Avenger{
         // method to set arsenal
         void setArsenal(std::vector<std::string> aWeapon);
 
+
         // method to add weapon to arsenal to pre existing arsenal list
         void addWeapon(Weapon weapon);
 
@@ -48,4 +52,10 @@ class Avenger{
         // method to display arsenal 
         void displayArsenal();
 
+        // ACCESSOR 
+        std::string getName();
+
+        int getAge();
+
 };
+
