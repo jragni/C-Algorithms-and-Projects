@@ -1,35 +1,43 @@
-#include <iostream>
-#include <fstream>
+#ifndef LAB3PROGRAM3_H
+#define LAB3PROGRAM_H
+
 #include <vector>
 #include <string>
 
 
 
 class Car{
-    public:
-        // default constructor
-        Car();
-        // overloaded constructor
-        Car(std::string &aMake, std::string &aModel, std::string &aType, int &aYear, int &milesDriven);
 
-        // Mutators
-        void setYear(int year);
+private:
+    // data
+    std::string make;
+    std::string model;
+    std::string type;
+    int year;
+    int mileage;
 
-        void setMakeAndModel(std::string make, std::string model);
+public:
+    //default constructor
+    Car();
 
-        void setMilesDriven(int mileage);
+    //overloaded Constructor
+    Car(std::string aMake, std::string aModel, std::string aType, int aYear, int aMileage);
 
-        void setType(std::string type);
-        
-
-    private:
-        int year;
-        std::string make;
-        std::string model;
-        int milesDriven;
-        std::string type; 
+    // mutators/setters
+    void setMake(std::string aMake);
+    void setModel(std::string aModel);
+    void setType(std::string aType);
+    void setYear(int aYear);
+    void setMileage(int aMileage);
+    // getters
+    std::string getMake();
+    std::string getModel();
+    std::string getType();
+    int getYear();
+    int getMileage();
 
 };
 
+void askUser(std::vector<Car> &list);
 
-void askUser(std::vector<Car> &carsList);
+#endif
