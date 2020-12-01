@@ -1,5 +1,7 @@
 
-
+#include "lab3program3.hpp"
+#include <vector>
+#include <string>
 /*
 Create a class modeled after a car. Your class should include the following data members:
 
@@ -12,14 +14,13 @@ You will then create a program that allows a user to populate a list of the cars
 */
 
 int main( int argc, char* argv[]){
+    std::vector<Car> cars2BAdded;
 
     // Welcome User
-    
-    // do -- while 
-    
-    // Create car object
+    std::cout << "Hello I am a program that will help you keep track of your car inventory \n";
 
-
+    // ask user for inputs 
+    askUser(cars2BAdded);
 
     // initialize file to create list 
 

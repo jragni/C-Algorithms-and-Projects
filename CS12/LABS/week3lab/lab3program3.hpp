@@ -4,23 +4,23 @@
 #include <string>
 
 
+
 class Car{
     public:
         // default constructor
         Car();
         // overloaded constructor
-        Car(std::string aMake, std::string aModel, std::string aType, int aYear, int milesDriven);
+        Car(std::string &aMake, std::string &aModel, std::string &aType, int &aYear, int &milesDriven);
 
         // Mutators
-        void setYear();
+        void setYear(int year);
 
-        void setMakeAndModel();
+        void setMakeAndModel(std::string make, std::string model);
 
-        void setMilesDriven();
+        void setMilesDriven(int mileage);
 
-        void setType();
+        void setType(std::string type);
         
-    
 
     private:
         int year;
@@ -30,3 +30,6 @@ class Car{
         std::string type; 
 
 };
+
+
+void askUser(std::vector<Car> &carsList);
