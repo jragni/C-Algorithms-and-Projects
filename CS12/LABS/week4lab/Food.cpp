@@ -12,7 +12,6 @@ Food::Food(std::string foodName, int cal, int proteins, int carbs){
     setCal(cal);
     setProteins(proteins);
     setCarbs(carbs);
-    std::cout << "\n"<< getFood() << " has been added.\n"; 
 }
 // mutators
 void Food::setFood(std::string foodName){

@@ -8,6 +8,8 @@
 Meal::Meal(std::vector<Food> foodList, std::string mealName){
     
     setMealName(mealName);
+    setFoodList(foodList);
+    setFoodNames(foodList);
     // compute total calories,carb, and protein
     calculateTotals(foodList);
 }
@@ -15,33 +17,40 @@ Meal::Meal(std::vector<Food> foodList, std::string mealName){
 void Meal::setMealName(std::string mealName){
     this->mealName = mealName;
 }
+void Meal::setFoodList(std::vector<Food> foodlist){
+    this->foodList=foodList;
+}
+
 // accessor 
 
 std::string Meal::getMeal(){
-    return this->mealName;
+    return mealName;
 }
-
-std::vector<std::string> Meal::getFoodList(){
-    // input: none
-    // output: @Names of food added 
-    std::vector<std::string> list;
+void Meal::setFoodNames(std::vector<Food> foodList){
     for(unsigned i = 0; i<foodList.size();i++){
-        list.push_back(foodList.at(i).getFood());
+        this->foodNames.push_back(foodList.at(i).getFood());
     }
-    return list;
 }
 
-int Meal::getTotalCal(){ return this->totalCal;}
-int Meal::getTotalCarbs(){ return this-> totalCarb;}
-int Meal::getTotalProteins(){return this-> totalProtein;}
+
+int Meal::getTotalCal(){ 
+    return totalCal;
+}
+int Meal::getTotalCarbs(){
+    return totalCarb;
+}
+int Meal::getTotalProteins(){
+    return totalProtein;
+}
 
 // methods
-void Meal::calculateTotals(std::vector<Food> &list){
-    // for every food item on the list, compute the total macros and cals.
-    for(unsigned i = 0; i<list.size(); i++){
-       this-> totalCal += list.at(i).getCal();
-       this-> totalCarb += list.at(i).getCarbs();
-       this-> totalProtein += list.at(i).getCarbs();
+
+void Meal::calculateTotals(std::vector<Food> foodList){
+    for(unsigned i = 0; i<foodList.size();i++){
+        totalProtein += foodList.at(i).getProteins();
+        totalCarb += foodList.at(i).getCarbs();
+        totalCal += foodList.at(i).getCal();
+
     }
 }
 
@@ -54,9 +63,14 @@ std::ostream& Meal::operator<<(Meal mealObj){
     std::cout <<"\n"<<"name of meal: "<< getMeal()<<std::endl;
     std::cout <<"calories: "<< getTotalCal()<<std::endl;
     std::cout <<"carbohydrates: "<< getTotalCarbs()<<std::endl;
+    std::cout <<"protien: "<< getTotalProteins() << std::endl;
     std::cout <<"products: ";
-    for(unsigned i = 0; i < foodList.size();i++){
-        std::cout<< getFoodList().at(i)<<std::endl;
+    for(unsigned i = 0; i<foodNames.size(); i++ ){
+        std::cout << foodNames.at(i);
+        if(i+1<foodNames.size()){
+            std::cout<<", ";
+        }
     }
+    std::cout<<std::endl;
 
 }

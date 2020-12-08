@@ -24,10 +24,9 @@ Each class should have its own .cpp and header files. Define the default constru
 using namespace std;
 
 int main(int argc, char** argv){
-    Food apple("apple",200,1,15);
+    Food apple("apple",250,1,15);
     Food sandwich("sandwhich",200,20,35);
     std::vector<Food> fl = {apple, sandwich};
     Meal lunch(fl,"lunch");
-    cout<< lunch.getTotalCal();
     lunch << lunch; 
 }

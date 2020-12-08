@@ -9,31 +9,34 @@ class Meal{
         // attributes
         std::vector<Food> foodList;
         std::string mealName;
-        int totalCal;
-        int totalProtein;
-        int totalCarb;
+        std::vector<std::string> foodNames;
 
-        void calculateTotals(std::vector<Food> &list);
+        int totalCal = 0;
+        int totalProtein = 0;
+        int totalCarb = 0;
 
     public:
         //default constructor
-        Meal(){}
+        Meal();
 
         //overloaded constructor
         Meal(std::vector<Food> foodList, std::string mealName);
 
         // Mutators
         void setMealName(std::string mealName);
-        
+        void setFoodList(std::vector<Food> foodlist);
         void operator+(Food foodObj);
         std::ostream& operator<<(Meal mealObj);
+        void calculateTotals(std::vector<Food> foodList);
+        void setFoodNames(std::vector<Food> foodList);
+
 
         // Accessors
         std::string getMeal();
         int getTotalCal();
         int getTotalCarbs();
         int getTotalProteins();
-        std::vector<std::string> getFoodList();
+        
 };
 
 #endif
