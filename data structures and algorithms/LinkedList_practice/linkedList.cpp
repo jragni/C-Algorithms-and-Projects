@@ -60,7 +60,7 @@ void deleteNodeFront(Node** head){
 } 
 void reverseList(Node** head){
     // add every node to the front as we traverse list
-    std::cout << *head;
+  
    Node* curr = *head;
    Node* prev = nullptr;
    Node* next = nullptr;
